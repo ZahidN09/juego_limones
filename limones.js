@@ -16,10 +16,11 @@ let limonY = 5;
 let puntaje = 0;
 let vidas = 3;
 
-let velocidadCaida = 300;
+let velocidadCaida = 200;
+let intervalo;
 
 function iniciar() {
-    setInterval(bajarLimon,velocidadCaida); //(Una función, el tiempo en ms)
+    intervalo = setInterval(bajarLimon, velocidadCaida); //(Una función, el tiempo en ms)
     // setInterval va a ejecutar la función en intervalos determinados
     dibujarSuelo();
     dibujarPersonaje();
@@ -37,12 +38,12 @@ function dibujarPersonaje() {
 }
 
 function moverIzquierda() {
-    personajeX = personajeX - 10;
+    personajeX = personajeX - 20;
     actualizarPantalla();
 }
 
 function moverDerecha() {
-    personajeX = personajeX + 10;
+    personajeX = personajeX + 20;
     actualizarPantalla();
 }
 
@@ -77,6 +78,19 @@ function detectarAtrapado() {
         //alert("ATRAPADO");
         aparecerLimon();
         aumentarPuntaje();
+        if (puntaje == 3) {
+            velocidadCaida = 150;
+            clearInterval(intervalo);
+            intervalo = setInterval(bajarLimon, velocidadCaida);
+        } else if (puntaje == 6){
+            velocidadCaida = 100;
+            clearInterval(intervalo);
+            intervalo = setInterval(bajarLimon, velocidadCaida);
+        } else if (puntaje >= 10){
+            velocidadCaida = 200;
+            clearInterval(intervalo);
+            alert("GANASTE, BIEN HECHO, AHORA PUEDES HACER TU LIMONADA")
+        }
     }
 }
 
@@ -84,7 +98,8 @@ function detectarPiso() {
     if (limonY + ALTURA_LIMON >= canvas.height - ALTURA_SUELO) {
         aparecerLimon();
         perderVidas();
-        if (vidas <= 0){
+        if (vidas <= 0) {
+            clearInterval(intervalo);
             alert("GAME OVER");
         }
     }
@@ -97,10 +112,10 @@ function aparecerLimon() {
 }
 function aumentarPuntaje() {
     puntaje = puntaje + 1;
-    mostarEnSpan("txtPuntaje",puntaje);
+    mostarEnSpan("txtPuntaje", puntaje);
 }
 
 function perderVidas() {
     vidas = vidas - 1;
-    mostarEnSpan("txtVidas",vidas);
+    mostarEnSpan("txtVidas", vidas);
 }
