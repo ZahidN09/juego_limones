@@ -119,3 +119,15 @@ function perderVidas() {
     vidas = vidas - 1;
     mostarEnSpan("txtVidas", vidas);
 }
+
+function reiniciar(){
+    vidas = 3;
+    puntaje = 0;
+    mostarEnSpan("txtPuntaje", puntaje);
+    mostarEnSpan("txtVidas", vidas);
+    velocidadCaida = 200;
+    personajeX = canvas.width / 2;
+    personajeY = canvas.height - (ALTURA_SUELO + ALTURA_PERSONAJE);
+    clearInterval(intervalo);   
+    iniciar();
+}
