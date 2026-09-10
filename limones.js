@@ -84,6 +84,9 @@ function detectarPiso() {
     if (limonY + ALTURA_LIMON >= canvas.height - ALTURA_SUELO) {
         aparecerLimon();
         perderVidas();
+        if (vidas <= 0){
+            alert("GAME OVER");
+        }
     }
 }
 
