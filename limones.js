@@ -16,7 +16,11 @@ let limonY = 5;
 let puntaje = 0;
 let vidas = 3;
 
+let velocidadCaida = 300;
+
 function iniciar() {
+    setInterval(bajarLimon,velocidadCaida); //(Una función, el tiempo en ms)
+    // setInterval va a ejecutar la función en intervalos determinados
     dibujarSuelo();
     dibujarPersonaje();
     aparecerLimon();
