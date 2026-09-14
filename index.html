@@ -7,11 +7,16 @@
   <link rel="stylesheet" href="limones.css"/>
 </head>
 <body onload="iniciar()">
+  <div class="grid-tech"></div>
   <main class="contenedor">
+    <div class="status-line">
+      <span><i></i> SISTEMA ACTIVO</span>
+      <span>JUEGO // 01</span>
+    </div>
     <header class="encabezado">
-      <div class="icono">🍋</div>
+      <div class="icono"><span>🍋</span><b>01</b></div>
       <div>
-        <p class="etiqueta">JUEGO DE HABILIDAD</p>
+        <p class="etiqueta">ARCADE // HABILIDAD</p>
         <h1>Atrapar Limones</h1>
         <p class="subtitulo">Si del cielo te caen limones... ¡atrápalos todos!</p>
         <h2>Autor: Zahid Nazate</h2>
@@ -51,7 +56,12 @@
         <button class="btn btn-reiniciar" onclick="reiniciar()">↻ Reiniciar</button>
       </div>
 
-      <p class="ayuda">Usa los botones para mover la cesta y atrapar los limones.</p>
+      <div class="teclas">
+      <span>CONTROLES</span>
+      <kbd>←</kbd><kbd>→</kbd>
+      <em>MOVER</em>
+    </div>
+    <p class="ayuda">Atrapa los limones. Evita que caigan. Consigue la máxima puntuación.</p>
     </section>
   </main>
 
