@@ -7,16 +7,15 @@
 }
 
 :root {
-  --fondo: #09051a;
-  --fondo-panel: #15102b;
-  --morado: #7c3cff;
-  --morado-claro: #b66cff;
-  --cian: #00e5ff;
-  --rosa: #ff3cac;
-  --amarillo: #ffe600;
-  --texto: #f7f4ff;
+  --verde-oscuro: #173f2a;
+  --verde: #2e7d32;
+  --verde-claro: #66bb6a;
+  --amarillo: #ffd54f;
+  --amarillo-intenso: #fbc02d;
+  --crema: #fffdf3;
+  --texto: #243229;
   --blanco: #ffffff;
-  --sombra: 0 0 28px rgba(124, 60, 255, 0.28);
+  --sombra: 0 18px 45px rgba(23, 63, 42, 0.18);
 }
 
 body {
@@ -27,9 +26,9 @@ body {
   color: var(--texto);
   text-align: center;
   background:
-    radial-gradient(circle at 12% 15%, rgba(0, 229, 255, 0.14) 0 90px, transparent 91px),
-    radial-gradient(circle at 88% 82%, rgba(255, 60, 172, 0.16) 0 120px, transparent 121px),
-    linear-gradient(135deg, #09051a 0%, #12072a 52%, #070b20 100%);
+    radial-gradient(circle at 12% 15%, rgba(255, 213, 79, 0.24) 0 80px, transparent 81px),
+    radial-gradient(circle at 90% 80%, rgba(102, 187, 106, 0.18) 0 110px, transparent 111px),
+    linear-gradient(135deg, #f8f4dc 0%, #edf7e8 50%, #fffbea 100%);
 }
 
 .contenedor {
@@ -44,10 +43,10 @@ body {
   gap: 18px;
   margin-bottom: 22px;
   padding: 22px 28px;
-  background: rgba(21, 16, 43, 0.92);
-  border: 1px solid rgba(0, 229, 255, 0.25);
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(46, 125, 50, 0.13);
   border-radius: 24px;
-  box-shadow: var(--sombra), inset 0 0 30px rgba(124, 60, 255, 0.06);
+  box-shadow: var(--sombra);
   backdrop-filter: blur(8px);
 }
 
@@ -58,9 +57,9 @@ body {
   height: 74px;
   flex: 0 0 74px;
   font-size: 42px;
-  background: linear-gradient(145deg, #ffe600, #ff9f00);
+  background: linear-gradient(145deg, #fff8c9, #ffe46e);
   border-radius: 22px;
-  box-shadow: 0 0 18px rgba(255, 230, 0, 0.45), inset 0 -5px 0 rgba(255, 120, 0, 0.35);
+  box-shadow: inset 0 -5px 0 rgba(251, 192, 45, 0.25);
   transform: rotate(-6deg);
 }
 
@@ -70,35 +69,34 @@ body {
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 2px;
-  color: var(--cian);
+  color: var(--verde);
 }
 
 h1 {
   margin: 3px 0 4px;
-  color: var(--blanco);
+  color: var(--verde-oscuro);
   font-size: clamp(30px, 5vw, 46px);
   line-height: 1;
   letter-spacing: -1.5px;
-  text-shadow: 0 0 10px rgba(0, 229, 255, 0.35), 3px 3px 0 rgba(255, 60, 172, 0.25);
 }
 
 .subtitulo {
   margin: 0 0 6px;
-  color: #bdb4d9;
+  color: #647269;
   font-size: 15px;
 }
 
 h2 {
   margin: 0;
-  color: var(--morado-claro);
+  color: #78907d;
   font-size: 13px;
   font-weight: 600;
 }
 
 .zona-juego {
   padding: 20px;
-  background: rgba(21, 16, 43, 0.94);
-  border: 1px solid rgba(124, 60, 255, 0.3);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(46, 125, 50, 0.12);
   border-radius: 26px;
   box-shadow: var(--sombra);
 }
@@ -106,9 +104,8 @@ h2 {
 .marco-canvas {
   overflow: hidden;
   border-radius: 18px;
-  background: #05030f;
-  border: 2px solid var(--morado);
-  box-shadow: 0 0 22px rgba(124, 60, 255, 0.4), 0 12px 28px rgba(0, 0, 0, 0.45);
+  background: var(--verde-oscuro);
+  box-shadow: 0 12px 28px rgba(23, 63, 42, 0.22);
 }
 
 .barra-superior {
@@ -116,15 +113,14 @@ h2 {
   align-items: center;
   justify-content: space-between;
   padding: 11px 16px;
-  color: var(--blanco);
+  color: #fff;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.4px;
 }
 
 .indicador {
-  color: var(--cian);
-  text-shadow: 0 0 8px rgba(0, 229, 255, 0.8);
+  color: #d8f5c9;
   font-size: 10px;
   letter-spacing: 1.2px;
 }
@@ -135,9 +131,9 @@ canvas {
   max-width: 600px;
   height: auto;
   margin: 0 auto;
-  background: #100b24;
+  background: #eaf6df;
   border: 0;
-  outline: 5px solid rgba(0, 229, 255, 0.08);
+  outline: 5px solid rgba(255, 255, 255, 0.08);
 }
 
 .panel {
@@ -148,9 +144,8 @@ canvas {
   width: min(520px, 100%);
   margin: 20px auto 16px;
   padding: 14px 24px;
-  background: #0e0920;
-  border: 1px solid rgba(0, 229, 255, 0.25);
-  box-shadow: 0 0 18px rgba(0, 229, 255, 0.08);
+  background: #f7fbea;
+  border: 1px solid #dcebd5;
   border-radius: 18px;
 }
 
@@ -168,20 +163,18 @@ canvas {
   width: 42px;
   height: 42px;
   border-radius: 13px;
-  background: rgba(255, 230, 0, 0.13);
-  box-shadow: 0 0 12px rgba(255, 230, 0, 0.15);
+  background: #fff2b5;
   font-size: 21px;
 }
 
 .estadistica:nth-child(3) .estadistica-icono {
-  background: rgba(255, 60, 172, 0.13);
-  box-shadow: 0 0 12px rgba(255, 60, 172, 0.15);
+  background: #ffe1e1;
 }
 
 .estadistica strong {
   display: block;
   margin-top: 2px;
-  color: var(--blanco);
+  color: var(--verde-oscuro);
   font-size: 25px;
   line-height: 1;
 }
@@ -220,22 +213,21 @@ canvas {
 }
 
 .btn-movimiento {
-  color: var(--blanco);
-  color: var(--cian);
-  background: #17112f;
-  border: 1px solid rgba(0, 229, 255, 0.45);
-  box-shadow: 0 0 12px rgba(0, 229, 255, 0.12);
+  color: var(--verde-oscuro);
+  background: #eef6e9;
+  border: 1px solid #d2e6cc;
+  box-shadow: 0 5px 12px rgba(46, 125, 50, 0.08);
 }
 
 .btn-reiniciar {
-  color: #120b00;
-  background: linear-gradient(135deg, var(--amarillo), #ff9f00);
-  box-shadow: 0 0 18px rgba(255, 230, 0, 0.35);
+  color: #5b4300;
+  background: linear-gradient(135deg, var(--amarillo), #ffe985);
+  box-shadow: 0 7px 15px rgba(251, 192, 45, 0.22);
 }
 
 .ayuda {
   margin: 16px 0 0;
-  color: #9389b5;
+  color: #7b897f;
   font-size: 12px;
 }
 
