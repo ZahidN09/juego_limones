@@ -1,31 +1,261 @@
+/* ================================
+   ATRAPAR LIMONES — ESTILO VISUAL
+   ================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --verde-oscuro: #173f2a;
+  --verde: #2e7d32;
+  --verde-claro: #66bb6a;
+  --amarillo: #ffd54f;
+  --amarillo-intenso: #fbc02d;
+  --crema: #fffdf3;
+  --texto: #243229;
+  --blanco: #ffffff;
+  --sombra: 0 18px 45px rgba(23, 63, 42, 0.18);
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #0f172a;
-  color: white;
-  text-align: center;
+  min-height: 100vh;
   margin: 0;
-  padding: 20px;
+  padding: 32px 18px;
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  color: var(--texto);
+  text-align: center;
+  background:
+    radial-gradient(circle at 12% 15%, rgba(255, 213, 79, 0.24) 0 80px, transparent 81px),
+    radial-gradient(circle at 90% 80%, rgba(102, 187, 106, 0.18) 0 110px, transparent 111px),
+    linear-gradient(135deg, #f8f4dc 0%, #edf7e8 50%, #fffbea 100%);
 }
 
 .contenedor {
-  max-width: 800px;
+  width: min(900px, 100%);
   margin: 0 auto;
 }
 
+.encabezado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 22px;
+  padding: 22px 28px;
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(46, 125, 50, 0.13);
+  border-radius: 24px;
+  box-shadow: var(--sombra);
+  backdrop-filter: blur(8px);
+}
+
+.icono {
+  display: grid;
+  place-items: center;
+  width: 74px;
+  height: 74px;
+  flex: 0 0 74px;
+  font-size: 42px;
+  background: linear-gradient(145deg, #fff8c9, #ffe46e);
+  border-radius: 22px;
+  box-shadow: inset 0 -5px 0 rgba(251, 192, 45, 0.25);
+  transform: rotate(-6deg);
+}
+
+.etiqueta,
+.etiqueta-estadistica {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--verde);
+}
+
+h1 {
+  margin: 3px 0 4px;
+  color: var(--verde-oscuro);
+  font-size: clamp(30px, 5vw, 46px);
+  line-height: 1;
+  letter-spacing: -1.5px;
+}
+
+.subtitulo {
+  margin: 0 0 6px;
+  color: #647269;
+  font-size: 15px;
+}
+
+h2 {
+  margin: 0;
+  color: #78907d;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.zona-juego {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(46, 125, 50, 0.12);
+  border-radius: 26px;
+  box-shadow: var(--sombra);
+}
+
+.marco-canvas {
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--verde-oscuro);
+  box-shadow: 0 12px 28px rgba(23, 63, 42, 0.22);
+}
+
+.barra-superior {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 16px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.indicador {
+  color: #d8f5c9;
+  font-size: 10px;
+  letter-spacing: 1.2px;
+}
+
 canvas {
-  background-color: #111827;
-  border: 3px solid #38bdf8;
   display: block;
-  margin: 20px auto;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 0 auto;
+  background: #eaf6df;
+  border: 0;
+  outline: 5px solid rgba(255, 255, 255, 0.08);
 }
 
 .panel {
-  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  width: min(520px, 100%);
+  margin: 20px auto 16px;
+  padding: 14px 24px;
+  background: #f7fbea;
+  border: 1px solid #dcebd5;
+  border-radius: 18px;
 }
 
-.botones button {
-  margin: 5px;
-  padding: 10px 16px;
-  font-size: 16px;
+.estadistica {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 120px;
+  text-align: left;
+}
+
+.estadistica-icono {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  background: #fff2b5;
+  font-size: 21px;
+}
+
+.estadistica:nth-child(3) .estadistica-icono {
+  background: #ffe1e1;
+}
+
+.estadistica strong {
+  display: block;
+  margin-top: 2px;
+  color: var(--verde-oscuro);
+  font-size: 25px;
+  line-height: 1;
+}
+
+.separador {
+  width: 1px;
+  height: 42px;
+  background: #d7e4d1;
+}
+
+.botones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn {
+  border: 0;
+  border-radius: 13px;
+  padding: 12px 19px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 800;
   cursor: pointer;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, filter 0.16s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.03);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-movimiento {
+  color: var(--verde-oscuro);
+  background: #eef6e9;
+  border: 1px solid #d2e6cc;
+  box-shadow: 0 5px 12px rgba(46, 125, 50, 0.08);
+}
+
+.btn-reiniciar {
+  color: #5b4300;
+  background: linear-gradient(135deg, var(--amarillo), #ffe985);
+  box-shadow: 0 7px 15px rgba(251, 192, 45, 0.22);
+}
+
+.ayuda {
+  margin: 16px 0 0;
+  color: #7b897f;
+  font-size: 12px;
+}
+
+@media (max-width: 650px) {
+  body {
+    padding: 16px 10px;
+  }
+
+  .encabezado {
+    flex-direction: column;
+    padding: 20px 15px;
+  }
+
+  .zona-juego {
+    padding: 12px;
+    border-radius: 20px;
+  }
+
+  .panel {
+    gap: 15px;
+    padding: 12px;
+  }
+
+  .estadistica {
+    min-width: 105px;
+  }
+
+  .botones .btn {
+    flex: 1 1 140px;
+  }
 }

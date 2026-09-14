@@ -1,26 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Caza Estrellas</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atrapar Limones</title>
   <link rel="stylesheet" href="limones.css"/>
- 
 </head>
 <body onload="iniciar()">
-  <div class="contenedor">
-    <h1>Atrapar Limones</h1>
-    <p>Si del cielo te caen limones ..... </p>
-    <h2>Autor: Zahid Nazate</h2>
-    <canvas id="areaJuego" width="600" height="400"></canvas>
-    <div class="panel">
-      <p>Puntaje: <span id="txtPuntaje">0</span></p>
-      <p>Vidas: <span id="txtVidas">3</span></p>
-    </div>
-    <div class="botones">
-      <button onclick="moverIzquierda()">Izquierda</button>
-      <button onclick="moverDerecha()">Derecha</button>
-      <button onclick="reiniciar()">Reiniciar</button>
-    </div>
-  </div>
+  <main class="contenedor">
+    <header class="encabezado">
+      <div class="icono">🍋</div>
+      <div>
+        <p class="etiqueta">JUEGO DE HABILIDAD</p>
+        <h1>Atrapar Limones</h1>
+        <p class="subtitulo">Si del cielo te caen limones... ¡atrápalos todos!</p>
+        <h2>Autor: Zahid Nazate</h2>
+      </div>
+    </header>
+
+    <section class="zona-juego">
+      <div class="marco-canvas">
+        <div class="barra-superior">
+          <span>🍋 Caza limones</span>
+          <span class="indicador">● EN JUEGO</span>
+        </div>
+        <canvas id="areaJuego" width="600" height="400"></canvas>
+      </div>
+
+      <div class="panel" aria-label="Marcador">
+        <div class="estadistica">
+          <span class="estadistica-icono">🏆</span>
+          <div>
+            <span class="etiqueta-estadistica">PUNTAJE</span>
+            <strong id="txtPuntaje">0</strong>
+          </div>
+        </div>
+        <div class="separador"></div>
+        <div class="estadistica">
+          <span class="estadistica-icono">❤️</span>
+          <div>
+            <span class="etiqueta-estadistica">VIDAS</span>
+            <strong id="txtVidas">3</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="botones">
+        <button class="btn btn-movimiento" onclick="moverIzquierda()">← Izquierda</button>
+        <button class="btn btn-movimiento" onclick="moverDerecha()">Derecha →</button>
+        <button class="btn btn-reiniciar" onclick="reiniciar()">↻ Reiniciar</button>
+      </div>
+
+      <p class="ayuda">Usa los botones para mover la cesta y atrapar los limones.</p>
+    </section>
+  </main>
+
   <script src="limones.js"></script>
   <script src="utils.js"></script>
 </body>
