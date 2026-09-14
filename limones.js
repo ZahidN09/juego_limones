@@ -110,6 +110,7 @@ function aparecerLimon() {
     limonY = 5;
     actualizarPantalla();
 }
+
 function aumentarPuntaje() {
     puntaje = puntaje + 1;
     mostarEnSpan("txtPuntaje", puntaje);
