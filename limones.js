@@ -132,3 +132,13 @@ function reiniciar(){
     clearInterval(intervalo);   
     iniciar();
 }
+
+function desaparecerPersonaje(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    personajeX = 1000;
+    personajeY = 1000;
+    dibujarSuelo();
+    dibujarLimon();
+    detectarAtrapado();
+    detectarPiso();
+}
