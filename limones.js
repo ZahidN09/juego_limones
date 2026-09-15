@@ -100,7 +100,7 @@ function detectarPiso() {
         perderVidas();
         if (vidas <= 0) {
             clearInterval(intervalo);
-            alert("GAME OVER");
+            alert("PERDISTE");
         }
     }
 }
